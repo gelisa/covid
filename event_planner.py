@@ -1,3 +1,15 @@
+# general python
+import pandas as pd
+import numpy as np
+
+# graphics
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style("whitegrid")
+sns.set_context("poster")
+
+
+# the formula
 def get_event_size(prob, inf_num, pop_size=10**6):
     """
     for every probability that a person is present at an event and
@@ -47,8 +59,9 @@ def plot_figure(probs):
         '100000\n March Maddness\n Final in Atlanta'])
     #plt.xlabel('Event size')
     plt.title('COVID-19 Event Risk Assesment Planner\n Assumes Incidence Homogeneity')
-    plt.text(1000, 0.2, 
+    plt.text(10, 0.1, 
+             'Risk ~ 1 - (1 - pi)^n, where pi = num cases / 10^6.\n' +
              'Adopted from JS Weitz https://github.com/jsweitz/covid-19-event-risk-planner '+
-            'This calculation at ')
+            'This calculation at https://github.com/gelisa/covid.git', fontsize=14)
     plt.xlim(10, 10**5);
     plt.ylim(1, 10**6);
